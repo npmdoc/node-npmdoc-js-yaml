@@ -1,0 +1,813 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+
+        href="https://github.com/nodeca/js-yaml"
+
+    >js-yaml (v3.8.2)</a>
+</h1>
+<h4>YAML 1.2 parser and serializer</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-yaml">module js-yaml</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.Schema">
+            function <span class="apidocSignatureSpan">js-yaml.</span>Schema
+            <span class="apidocSignatureSpan">(definition)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.Type">
+            function <span class="apidocSignatureSpan">js-yaml.</span>Type
+            <span class="apidocSignatureSpan">(tag, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.YAMLException">
+            function <span class="apidocSignatureSpan">js-yaml.</span>YAMLException
+            <span class="apidocSignatureSpan">(reason, mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.addConstructor">
+            function <span class="apidocSignatureSpan">js-yaml.</span>addConstructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.compose">
+            function <span class="apidocSignatureSpan">js-yaml.</span>compose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.dump">
+            function <span class="apidocSignatureSpan">js-yaml.</span>dump
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.load">
+            function <span class="apidocSignatureSpan">js-yaml.</span>load
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.loadAll">
+            function <span class="apidocSignatureSpan">js-yaml.</span>loadAll
+            <span class="apidocSignatureSpan">(input, iterator, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.parse">
+            function <span class="apidocSignatureSpan">js-yaml.</span>parse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.safeDump">
+            function <span class="apidocSignatureSpan">js-yaml.</span>safeDump
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.safeLoad">
+            function <span class="apidocSignatureSpan">js-yaml.</span>safeLoad
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.safeLoadAll">
+            function <span class="apidocSignatureSpan">js-yaml.</span>safeLoadAll
+            <span class="apidocSignatureSpan">(input, output, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.scan">
+            function <span class="apidocSignatureSpan">js-yaml.</span>scan
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>CORE_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>DEFAULT_FULL_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>DEFAULT_SAFE_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>DEFAULT_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>FAILSAFE_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>JSON_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>MINIMAL_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>SAFE_SCHEMA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.</span>YAMLException.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-yaml.Schema">module js-yaml.Schema</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.Schema.Schema">
+            function <span class="apidocSignatureSpan">js-yaml.</span>Schema
+            <span class="apidocSignatureSpan">(definition)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.Schema.create">
+            function <span class="apidocSignatureSpan">js-yaml.Schema.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-yaml.Schema.</span>DEFAULT</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-yaml.YAMLException">module js-yaml.YAMLException</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.YAMLException.YAMLException">
+            function <span class="apidocSignatureSpan">js-yaml.</span>YAMLException
+            <span class="apidocSignatureSpan">(reason, mark)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-yaml.YAMLException.prototype">module js-yaml.YAMLException.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.YAMLException.prototype.constructor">
+            function <span class="apidocSignatureSpan">js-yaml.YAMLException.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(reason, mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-yaml.YAMLException.prototype.toString">
+            function <span class="apidocSignatureSpan">js-yaml.YAMLException.prototype.</span>toString
+            <span class="apidocSignatureSpan">(compact)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-yaml" id="apidoc.module.js-yaml">module js-yaml</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.Schema" id="apidoc.element.js-yaml.Schema">
+        function <span class="apidocSignatureSpan">js-yaml.</span>Schema
+        <span class="apidocSignatureSpan">(definition)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Schema(definition) {
+  this.include  = definition.include  || [];
+  this.implicit = definition.implicit || [];
+  this.explicit = definition.explicit || [];
+
+  this.implicit.forEach(function (type) {
+    if (type.loadKind &#x26;&#x26; type.loadKind !== &#x27;scalar&#x27;) {
+      throw new YAMLException(&#x27;There is a non-scalar type in the implicit list of a schema. Implicit resolving of such types is
+not supported.&#x27;);
+    }
+  });
+
+  this.compiledImplicit = compileList(this, &#x27;implicit&#x27;, []);
+  this.compiledExplicit = compileList(this, &#x27;explicit&#x27;, []);
+  this.compiledTypeMap  = compileMap(this.compiledImplicit, this.compiledExplicit);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.Type" id="apidoc.element.js-yaml.Type">
+        function <span class="apidocSignatureSpan">js-yaml.</span>Type
+        <span class="apidocSignatureSpan">(tag, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Type(tag, options) {
+  options = options || {};
+
+  Object.keys(options).forEach(function (name) {
+    if (TYPE_CONSTRUCTOR_OPTIONS.indexOf(name) === -1) {
+      throw new YAMLException(&#x27;Unknown option &#x22;&#x27; + name + &#x27;&#x22; is met in definition of &#x22;&#x27; + tag + &#x27;&#x22; YAML type.&#x27;);
+    }
+  });
+
+  // TODO: Add tag format check.
+  this.tag          = tag;
+  this.kind         = options[&#x27;kind&#x27;]         || null;
+  this.resolve      = options[&#x27;resolve&#x27;]      || function () { return true; };
+  this.construct    = options[&#x27;construct&#x27;]    || function (data) { return data; };
+  this.instanceOf   = options[&#x27;instanceOf&#x27;]   || null;
+  this.predicate    = options[&#x27;predicate&#x27;]    || null;
+  this.represent    = options[&#x27;represent&#x27;]    || null;
+  this.defaultStyle = options[&#x27;defaultStyle&#x27;] || null;
+  this.styleAliases = compileStyleAliases(options[&#x27;styleAliases&#x27;] || null);
+
+  if (YAML_NODE_KINDS.indexOf(this.kind) === -1) {
+    throw new YAMLException(&#x27;Unknown kind &#x22;&#x27; + this.kind + &#x27;&#x22; is specified for &#x22;&#x27; + tag + &#x27;&#x22; YAML type.&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.YAMLException" id="apidoc.element.js-yaml.YAMLException">
+        function <span class="apidocSignatureSpan">js-yaml.</span>YAMLException
+        <span class="apidocSignatureSpan">(reason, mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function YAMLException(reason, mark) {
+  // Super constructor
+  Error.call(this);
+
+  // Include stack trace in error object
+  if (Error.captureStackTrace) {
+    // Chrome and NodeJS
+    Error.captureStackTrace(this, this.constructor);
+  } else {
+    // FF, IE 10+ and Safari 6+. Fallback for others
+    this.stack = (new Error()).stack || &#x27;&#x27;;
+  }
+
+  this.name = &#x27;YAMLException&#x27;;
+  this.reason = reason;
+  this.mark = mark;
+  this.message = (this.reason || &#x27;(unknown reason)&#x27;) + (this.mark ? &#x27; &#x27; + this.mark.toString() : &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.addConstructor" id="apidoc.element.js-yaml.addConstructor">
+        function <span class="apidocSignatureSpan">js-yaml.</span>addConstructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addConstructor = function () {
+  throw new Error(&#x27;Function &#x27; + name + &#x27; is deprecated and cannot be used.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.compose" id="apidoc.element.js-yaml.compose">
+        function <span class="apidocSignatureSpan">js-yaml.</span>compose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compose = function () {
+  throw new Error(&#x27;Function &#x27; + name + &#x27; is deprecated and cannot be used.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.dump" id="apidoc.element.js-yaml.dump">
+        function <span class="apidocSignatureSpan">js-yaml.</span>dump
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dump(input, options) {
+  options = options || {};
+
+  var state = new State(options);
+
+  if (!state.noRefs) getDuplicateReferences(input, state);
+
+  if (writeNode(state, 0, input, true, true)) return state.dump + &#x27;\n&#x27;;
+
+  return &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.load" id="apidoc.element.js-yaml.load">
+        function <span class="apidocSignatureSpan">js-yaml.</span>load
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function load(input, options) {
+  var documents = loadDocuments(input, options);
+
+  if (documents.length === 0) {
+<span class="apidocCodeCommentSpan">    /*eslint-disable no-undefined*/
+</span>    return undefined;
+  } else if (documents.length === 1) {
+    return documents[0];
+  }
+  throw new YAMLException(&#x27;expected a single document in the stream, but found more&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Bundled YAML library for browsers
+
+``` html
+&#x3c;!-- esprima required only for !!js/function --&#x3e;
+&#x3c;script src=&#x22;esprima.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script src=&#x22;js-yaml.min.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script type=&#x22;text/javascript&#x22;&#x3e;
+var doc = jsyaml.<span class="apidocCodeKeywordSpan">load</span>(&#x27;greeting: hello\nname: world&#x27;);
+&#x3c;/script&#x3e;
+```
+
+Browser support was done mostly for online demo. If you find any errors - feel
+free to send pull requests with fixes. Also note, that IE and other old browsers
+needs [es5-shims](https://github.com/kriskowal/es5-shim) to operate.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.loadAll" id="apidoc.element.js-yaml.loadAll">
+        function <span class="apidocSignatureSpan">js-yaml.</span>loadAll
+        <span class="apidocSignatureSpan">(input, iterator, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadAll(input, iterator, options) {
+  var documents = loadDocuments(input, options), index, length;
+
+  for (index = 0, length = documents.length; index &#x3c; length; index += 1) {
+    iterator(documents[index]);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.parse" id="apidoc.element.js-yaml.parse">
+        function <span class="apidocSignatureSpan">js-yaml.</span>parse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function () {
+  throw new Error(&#x27;Function &#x27; + name + &#x27; is deprecated and cannot be used.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.safeDump" id="apidoc.element.js-yaml.safeDump">
+        function <span class="apidocSignatureSpan">js-yaml.</span>safeDump
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function safeDump(input, options) {
+  return dump(input, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.safeLoad" id="apidoc.element.js-yaml.safeLoad">
+        function <span class="apidocSignatureSpan">js-yaml.</span>safeLoad
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function safeLoad(input, options) {
+  return load(input, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+``` javascript
+yaml = require(&#x27;js-yaml&#x27;);
+fs   = require(&#x27;fs&#x27;);
+
+// Get document, or throw exception on error
+try {
+  var doc = yaml.<span class="apidocCodeKeywordSpan">safeLoad</span>(fs.readFileSync(&#x27;/home/ixti/example.yml&#x27;, &#x27;utf8
+&#x27;));
+  console.log(doc);
+} catch (e) {
+  console.log(e);
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.safeLoadAll" id="apidoc.element.js-yaml.safeLoadAll">
+        function <span class="apidocSignatureSpan">js-yaml.</span>safeLoadAll
+        <span class="apidocSignatureSpan">(input, output, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function safeLoadAll(input, output, options) {
+  loadAll(input, output, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Same as `safeLoad()`, but understands multi-document sources and apply
+`iterator` to each document.
+
+``` javascript
+var yaml = require(&#x27;js-yaml&#x27;);
+
+yaml.<span class="apidocCodeKeywordSpan">safeLoadAll</span>(data, function (doc) {
+  console.log(doc);
+});
+```
+
+
+### loadAll (string, iterator [ , options ])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.scan" id="apidoc.element.js-yaml.scan">
+        function <span class="apidocSignatureSpan">js-yaml.</span>scan
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan = function () {
+  throw new Error(&#x27;Function &#x27; + name + &#x27; is deprecated and cannot be used.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-yaml.Schema" id="apidoc.module.js-yaml.Schema">module js-yaml.Schema</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.Schema.Schema" id="apidoc.element.js-yaml.Schema.Schema">
+        function <span class="apidocSignatureSpan">js-yaml.</span>Schema
+        <span class="apidocSignatureSpan">(definition)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Schema(definition) {
+  this.include  = definition.include  || [];
+  this.implicit = definition.implicit || [];
+  this.explicit = definition.explicit || [];
+
+  this.implicit.forEach(function (type) {
+    if (type.loadKind &#x26;&#x26; type.loadKind !== &#x27;scalar&#x27;) {
+      throw new YAMLException(&#x27;There is a non-scalar type in the implicit list of a schema. Implicit resolving of such types is
+not supported.&#x27;);
+    }
+  });
+
+  this.compiledImplicit = compileList(this, &#x27;implicit&#x27;, []);
+  this.compiledExplicit = compileList(this, &#x27;explicit&#x27;, []);
+  this.compiledTypeMap  = compileMap(this.compiledImplicit, this.compiledExplicit);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.Schema.create" id="apidoc.element.js-yaml.Schema.create">
+        function <span class="apidocSignatureSpan">js-yaml.Schema.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createSchema() {
+  var schemas, types;
+
+  switch (arguments.length) {
+    case 1:
+      schemas = Schema.DEFAULT;
+      types = arguments[0];
+      break;
+
+    case 2:
+      schemas = arguments[0];
+      types = arguments[1];
+      break;
+
+    default:
+      throw new YAMLException(&#x27;Wrong number of arguments for Schema.create function&#x27;);
+  }
+
+  schemas = common.toArray(schemas);
+  types = common.toArray(types);
+
+  if (!schemas.every(function (schema) { return schema instanceof Schema; })) {
+    throw new YAMLException(&#x27;Specified list of super schemas (or a single Schema object) contains a non-Schema object.&#x27;);
+  }
+
+  if (!types.every(function (type) { return type instanceof Type; })) {
+    throw new YAMLException(&#x27;Specified list of YAML types (or a single Type object) contains a non-Type object.&#x27;);
+  }
+
+  return new Schema({
+    include: schemas,
+    explicit: types
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-yaml.YAMLException" id="apidoc.module.js-yaml.YAMLException">module js-yaml.YAMLException</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.YAMLException.YAMLException" id="apidoc.element.js-yaml.YAMLException.YAMLException">
+        function <span class="apidocSignatureSpan">js-yaml.</span>YAMLException
+        <span class="apidocSignatureSpan">(reason, mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function YAMLException(reason, mark) {
+  // Super constructor
+  Error.call(this);
+
+  // Include stack trace in error object
+  if (Error.captureStackTrace) {
+    // Chrome and NodeJS
+    Error.captureStackTrace(this, this.constructor);
+  } else {
+    // FF, IE 10+ and Safari 6+. Fallback for others
+    this.stack = (new Error()).stack || &#x27;&#x27;;
+  }
+
+  this.name = &#x27;YAMLException&#x27;;
+  this.reason = reason;
+  this.mark = mark;
+  this.message = (this.reason || &#x27;(unknown reason)&#x27;) + (this.mark ? &#x27; &#x27; + this.mark.toString() : &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-yaml.YAMLException.prototype" id="apidoc.module.js-yaml.YAMLException.prototype">module js-yaml.YAMLException.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.YAMLException.prototype.constructor" id="apidoc.element.js-yaml.YAMLException.prototype.constructor">
+        function <span class="apidocSignatureSpan">js-yaml.YAMLException.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(reason, mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function YAMLException(reason, mark) {
+  // Super constructor
+  Error.call(this);
+
+  // Include stack trace in error object
+  if (Error.captureStackTrace) {
+    // Chrome and NodeJS
+    Error.captureStackTrace(this, this.constructor);
+  } else {
+    // FF, IE 10+ and Safari 6+. Fallback for others
+    this.stack = (new Error()).stack || &#x27;&#x27;;
+  }
+
+  this.name = &#x27;YAMLException&#x27;;
+  this.reason = reason;
+  this.mark = mark;
+  this.message = (this.reason || &#x27;(unknown reason)&#x27;) + (this.mark ? &#x27; &#x27; + this.mark.toString() : &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-yaml.YAMLException.prototype.toString" id="apidoc.element.js-yaml.YAMLException.prototype.toString">
+        function <span class="apidocSignatureSpan">js-yaml.YAMLException.prototype.</span>toString
+        <span class="apidocSignatureSpan">(compact)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString(compact) {
+  var result = this.name + &#x27;: &#x27;;
+
+  result += this.reason || &#x27;(unknown reason)&#x27;;
+
+  if (!compact &#x26;&#x26; this.mark) {
+    result += &#x27; &#x27; + this.mark.toString();
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
