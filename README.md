@@ -1,11 +1,13 @@
-# api documentation for  [js-yaml (v3.8.2)](https://github.com/nodeca/js-yaml)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-js-yaml.svg)](https://travis-ci.org/npmdoc/node-npmdoc-js-yaml)
+# api documentation for  [js-yaml (v3.8.3)](https://github.com/nodeca/js-yaml)  [![npm package](https://img.shields.io/npm/v/npmdoc-js-yaml.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-js-yaml) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-js-yaml.svg)](https://travis-ci.org/npmdoc/node-npmdoc-js-yaml)
 #### YAML 1.2 parser and serializer
 
 [![NPM](https://nodei.co/npm/js-yaml.png?downloads=true)](https://www.npmjs.com/package/js-yaml)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-js-yaml/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-js_yaml_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-js-yaml/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-js-yaml/build/screenCapture.buildNpmdoc.browser.%2Fhome%2Ftravis%2Fbuild%2Fnpmdoc%2Fnode-npmdoc-js-yaml%2Ftmp%2Fbuild%2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-js-yaml/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-js-yaml/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-js-yaml/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-js-yaml/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -58,8 +60,8 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "02d3e2c0f6beab20248d412c352203827d786721",
-        "tarball": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.8.2.tgz"
+        "shasum": "33a05ec481c850c8875929166fe1beb61c728766",
+        "tarball": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.8.3.tgz"
     },
     "files": [
         "index.js",
@@ -67,7 +69,7 @@
         "bin/",
         "dist/"
     ],
-    "gitHead": "7dd7254139804a0cd15683fd9e61ad949bd5ce14",
+    "gitHead": "db20313c9c432766d0606aa1d9659b4f96b9bf5b",
     "homepage": "https://github.com/nodeca/js-yaml",
     "keywords": [
         "yaml",
@@ -92,7 +94,7 @@
     "scripts": {
         "test": "make test"
     },
-    "version": "3.8.2"
+    "version": "3.8.3"
 }
 ```
 
@@ -298,7 +300,7 @@ var doc = jsyaml.load('greeting: hello\nname: world');
 </script>
 '''
 
-Browser support was done mostly for online demo. If you find any errors - feel
+Browser support was done mostly for the online demo. If you find any errors - feel
 free to send pull requests with fixes. Also note, that IE and other old browsers
 needs [es5-shims](https://github.com/kriskowal/es5-shim) to operate.
 ...
@@ -381,7 +383,7 @@ function safeLoadAll(input, output, options) {
 ```shell
 ...
 
-Same as 'safeLoad()', but understands multi-document sources and apply
+Same as 'safeLoad()', but understands multi-document sources and applies
 'iterator' to each document.
 
 ''' javascript
